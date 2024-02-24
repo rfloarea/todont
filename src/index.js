@@ -37,3 +37,9 @@ console.table(todont1); // it works!!
 
 // okay, now that we can make our instances, let's get them into our array
 
+function addObjArray(newObj) {
+    todontArray.push(newObj);
+    console.table(todontArray);
+};
+
+addObjArray(todont1); // it works!!

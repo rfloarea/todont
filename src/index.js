@@ -1,6 +1,6 @@
-import { addToArray } from "./addTodont";
+import { addItemToLocalStorage } from "./addItem";
 
-export const todontArray = [];
+// export const todontArray = [];
 
 
 
@@ -19,20 +19,16 @@ class Todont {
     }
 };
 
-// what if we wrapped this in an IIFE? 
-// why? 
-// so we can more cleanly export the newTodont
-// why?
-// so we can export an object, not a function
-
-const newTodont = (() => {
+const newItem = (() => {
     let title = prompt("What don't you want to do?");
     let description = prompt("What is your reason?");
     let duration = prompt("For how long will you not do this?");
     let importance = prompt("How important is this?");
-    const newTodont = new Todont(title, description, duration, importance);
-    console.table(newTodont);
-    return newTodont;
+    const newItem = new Todont(title, description, duration, importance);
+    console.table(newItem);
+    return newItem;
 })();
 
-addToArray(newTodont);
+addItemToLocalStorage(newItem); // it works!
+
+// how do we have the user add multiple items?

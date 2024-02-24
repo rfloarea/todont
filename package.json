@@ -1,0 +1,16 @@
+{
+  "name": "todont",
+  "version": "1.0.0",
+  "description": "the anti-todo app app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "rowen floarea",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}

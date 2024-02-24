@@ -1,2 +1,2 @@
-# todont
-TODONT, the anti-todo list app app
+# TODONT
+*the anti-todo list app app*

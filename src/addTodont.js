@@ -1,7 +1,18 @@
 import { todontArray } from ".";
-export { addTodont };
+import { getNewTodont } from ".";
 
-function addTodont(newObj) {
-    todontArray.push(newObj);
-    console.table(todontArray);
-};
+
+const addNewTodont = (function() {
+    
+    let newTodont = () => getNewTodont;
+
+    const newArray = () => todontArray.push(newTodont);
+
+    return {
+        newArray
+    }
+})();
+
+
+
+export { addNewTodont };

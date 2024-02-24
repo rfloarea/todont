@@ -1,7 +1,7 @@
-console.log('it works!!');
+import { addTodont } from "./addTodont";
 
 // let's start by initializing our empty list of items (also known as "todonts")
-const todontArray = [];
+export const todontArray = [];
 console.log(todontArray); // it works!!
 
 // now what do we do? 
@@ -37,9 +37,16 @@ console.table(todont1); // it works!!
 
 // okay, now that we can make our instances, let's get them into our array
 
-function addObjArray(newObj) {
-    todontArray.push(newObj);
-    console.table(todontArray);
-};
 
-addObjArray(todont1); // it works!!
+
+addTodont(todont1);
+
+// okay but now what?
+// I feel like we have to start thinking about how we're actually going to use this (from console)
+// so what's the challenge here: 
+// 1. how do we allow the user to add todonts?
+// 2. how to we let them edit todonts?
+// 3. how do we let them remove todonts?
+
+// feels like we can use three modules for this: addTodont, editTodont, removeTodont
+// all result in printing/logging an updated array/list

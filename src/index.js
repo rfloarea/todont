@@ -1,5 +1,5 @@
+import { addToArray } from "./addTodont";
 
-export { getNewTodont };
 export const todontArray = [];
 
 
@@ -19,22 +19,20 @@ class Todont {
     }
 };
 
-function getNewTodont() {
+// what if we wrapped this in an IIFE? 
+// why? 
+// so we can more cleanly export the newTodont
+// why?
+// so we can export an object, not a function
+
+const newTodont = (() => {
     let title = prompt("What don't you want to do?");
     let description = prompt("What is your reason?");
     let duration = prompt("For how long will you not do this?");
     let importance = prompt("How important is this?");
     const newTodont = new Todont(title, description, duration, importance);
-    console.table(newTodont); // it works!!
+    console.table(newTodont);
     return newTodont;
-}
+})();
 
-getNewTodont();
-
-
-// export const todont1 = new Todont('no more twitter', 'you need to focus on coding', '8 hours', 'high');
-// console.table(todont1); // it works!!
-// console.log(todont1 instanceof Todont); // logs "true"
-// console.log(todont1.getTitle()) // logs "no more twitter"
-// console.log(todont1.setTitle('no more whatsapp')) // logs "no more whatsapp"
-// console.table(todont1); // it works!!
+addToArray(newTodont);

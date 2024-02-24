@@ -1,18 +1,10 @@
 import { todontArray } from ".";
-import { getNewTodont } from ".";
 
 
-const addNewTodont = (function() {
-    
-    let newTodont = () => getNewTodont;
+function addToArray(obj) {
+    todontArray.push(obj);
+    console.table(todontArray);
+    return;
+}
 
-    const newArray = () => todontArray.push(newTodont);
-
-    return {
-        newArray
-    }
-})();
-
-
-
-export { addNewTodont };
+export { addToArray };

@@ -1,15 +1,11 @@
-// import { todontArray } from ".";
-
-// TODO: refactor to use localStorage
+import { storedData } from ".";
 
 function addItemToLocalStorage(obj) {
-    // save our item to a nice variable
-    // const newItem = obj;
-    // then stringify
-    localStorage.setItem('title', JSON.stringify(obj))
-    // todontArray.push(obj);
-    // console.table(todontArray);
-    // return;
+    // add our new item to our array
+    storedData.push(obj);    
+    // console.table(itemArray);
+    // then store stringified array
+    localStorage.setItem('itemArray', JSON.stringify(storedData));
 }
 
 export { addItemToLocalStorage };

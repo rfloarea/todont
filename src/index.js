@@ -1,7 +1,23 @@
 import { addItemToLocalStorage } from "./addItem";
 
-// export const todontArray = [];
+// export let itemArray = []; // this need to come from localStorage!!!
 
+// initialize our array or get it from local storage
+
+// window.addEventListener('onload', itemArray);
+
+export const storedData = (() => {
+    let userData = localStorage.getItem('itemArray')
+
+    if (userData) {   
+        let itemString = JSON.parse(userData)
+        let itemArray = [...itemString];
+        console.table(itemArray);
+        return itemArray;
+    } else {
+        return [];
+    }
+})();
 
 
 class Todont {
@@ -29,6 +45,5 @@ const newItem = (() => {
     return newItem;
 })();
 
-addItemToLocalStorage(newItem); // it works!
-
-// how do we have the user add multiple items?
+addItemToLocalStorage(newItem);
+console.table(storedData);

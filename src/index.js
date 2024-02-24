@@ -30,3 +30,10 @@ class Todont {
 
 const todont1 = new Todont('no more twitter', 'you need to focus on coding', '8 hours', 'high');
 console.table(todont1); // it works!!
+console.log(todont1 instanceof Todont); // logs "true"
+console.log(todont1.getTitle()) // logs "no more twitter"
+console.log(todont1.setTitle('no more whatsapp')) // logs "no more whatsapp"
+console.table(todont1); // it works!!
+
+// okay, now that we can make our instances, let's get them into our array
+

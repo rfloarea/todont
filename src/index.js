@@ -1,10 +1,16 @@
 import { addItemToLocalStorage } from "./addItem";
-import { removeItem } from "./removeTodont";
+import { removeItem } from "./removeItem";
+import { clearAllItems } from "./clearAllItems";
 
 const removeBtn = document.createElement('button');
 document.body.appendChild(removeBtn);
 removeBtn.textContent = "Remove a TODONT";
 removeBtn.addEventListener('click', removeItem);
+
+const clearBtn = document.createElement('button');
+document.body.appendChild(clearBtn);
+clearBtn.textContent = "Clear all TODONTs";
+clearBtn.addEventListener('click', clearAllItems);
 
 export const storedData = (() => {
     let userData = localStorage.getItem('itemArray')

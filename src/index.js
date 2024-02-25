@@ -1,10 +1,10 @@
 import { addItemToLocalStorage } from "./addItem";
+import { removeItem } from "./removeTodont";
 
-// export let itemArray = []; // this need to come from localStorage!!!
-
-// initialize our array or get it from local storage
-
-// window.addEventListener('onload', itemArray);
+const removeBtn = document.createElement('button');
+document.body.appendChild(removeBtn);
+removeBtn.textContent = "Remove a TODONT";
+removeBtn.addEventListener('click', removeItem);
 
 export const storedData = (() => {
     let userData = localStorage.getItem('itemArray')

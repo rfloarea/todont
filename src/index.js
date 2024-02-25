@@ -3,6 +3,7 @@ import { removeItem } from "./removeItem";
 import { clearAllItems } from "./clearAllItems";
 import { editItem } from "./editTodont";
 
+// button elements
 const removeBtn = document.createElement('button');
 document.body.appendChild(removeBtn);
 removeBtn.textContent = "Remove a TODONT";
@@ -18,6 +19,7 @@ document.body.appendChild(editBtn);
 editBtn.textContent = "Edit a TODONT";
 editBtn.addEventListener('click', editItem);
 
+// initialize and/or retrieve local storage
 export const storedData = (() => {
     let userData = localStorage.getItem('itemArray')
 
@@ -31,7 +33,7 @@ export const storedData = (() => {
     }
 })();
 
-
+// item constructor (instance methods need some work)
 class Todont {
     constructor (title, description, duration, importance) {
         this.title = title;
@@ -57,6 +59,7 @@ class Todont {
     }
 };
 
+// use prompts to instantiate our new objects
 const newItem = (() => {
     let title = prompt("What don't you want to do?");
     let description = prompt("What is your reason?");
@@ -67,5 +70,6 @@ const newItem = (() => {
     return newItem;
 })();
 
+// this will have a nicer home some day <3
 addItemToLocalStorage(newItem);
 console.table(storedData);

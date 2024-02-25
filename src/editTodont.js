@@ -1,17 +1,10 @@
 import { storedData } from ".";
 
-// how do we implement this?
-// we grab our array and find the item we want
-// we run the proper instance method
-// and then nicely return our item back home
-
 export function editItem() {
-    let index = parseInt(prompt("Which TODONT do you want to edit? (use index)"));
-    console.log(typeof index); // number
-    let key = prompt("what do you want to edit? (use key)");
-  
+    const index = parseInt(prompt("Which TODONT do you want to edit? (use index)"));
+    const key = prompt("what do you want to edit? (use key)");
     const item = storedData[index];
-    console.table(item);
+// this feels messy, but it works soooooo
     if (key == "title") {
         item.title = prompt("Edit title");
         console.table(item);
@@ -25,6 +18,7 @@ export function editItem() {
         item.importance = prompt("Edit importance");
         console.table(item);
     }
+
     console.table(storedData);
 
 };

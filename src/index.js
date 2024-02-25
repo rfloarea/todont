@@ -1,6 +1,7 @@
 import { addItemToLocalStorage } from "./addItem";
 import { removeItem } from "./removeItem";
 import { clearAllItems } from "./clearAllItems";
+import { editItem } from "./editTodont";
 
 const removeBtn = document.createElement('button');
 document.body.appendChild(removeBtn);
@@ -11,6 +12,11 @@ const clearBtn = document.createElement('button');
 document.body.appendChild(clearBtn);
 clearBtn.textContent = "Clear all TODONTs";
 clearBtn.addEventListener('click', clearAllItems);
+
+const editBtn = document.createElement('button');
+document.body.appendChild(editBtn);
+editBtn.textContent = "Edit a TODONT";
+editBtn.addEventListener('click', editItem);
 
 export const storedData = (() => {
     let userData = localStorage.getItem('itemArray')
@@ -33,11 +39,21 @@ class Todont {
         this.duration = duration;
         this.importance = importance;
     }
-    getTitle() {
-        return this.title;
-    }
-    setTitle(newTitle) {
+    setTitle() {
+        let newTitle = prompt("Edit title");
         return this.title = newTitle;
+    }
+    setDescription() {
+        let newDesc = prompt("Edit description");
+        return this.description = newDesc;
+    }
+    setDuration() {
+        let newDur = prompt("Edit duration");
+        return this.duration = newDur;
+    }
+    setImportant() {
+        let newImp = prompt("Edit importance");
+        return this.importance = newImp;
     }
 };
 
